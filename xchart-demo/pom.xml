@@ -29,6 +29,30 @@
       <artifactId>javafx-controls</artifactId>
       <version>11.0.2</version>
     </dependency>
+  
+    <dependency>
+      <groupId>org.opensmarthouse.core.bundles</groupId>
+      <artifactId>org.opensmarthouse.core.ui.chart</artifactId>
+      <version>0.10.1</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>io.acryl</groupId>
+      <artifactId>datahub-auth-api</artifactId>
+      <version>0.10.2-2rc2</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>org.opensmarthouse.core.bundles</groupId>
+      <artifactId>org.opensmarthouse.core.ui.chart</artifactId>
+      <version>0.10.1</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>org.opensmarthouse.core.bundles</groupId>
+      <artifactId>org.opensmarthouse.core.ui.chart</artifactId>
+      <version>0.10.1</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
