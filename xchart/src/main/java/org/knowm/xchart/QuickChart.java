@@ -116,4 +116,9 @@ public final class QuickChart {
 
     return chart;
   }
+
+public static XYChart getChart(String chartTitle, String xTitle, String yTitle, String seriesName, long[] xData,
+        int[] yData) {
+    return null;
+}
 }

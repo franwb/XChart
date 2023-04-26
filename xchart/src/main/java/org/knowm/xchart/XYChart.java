@@ -450,4 +450,7 @@ public class XYChart extends Chart<XYStyler, XYSeries> {
       }
     }
   }
+
+public void addSeries(String seriesName, long[] xData2, int[] yData2) {
+}
 }
