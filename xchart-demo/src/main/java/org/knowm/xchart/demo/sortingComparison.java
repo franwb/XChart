@@ -13,7 +13,6 @@ import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
-//import org.knowm.xchart;
 
 public class sortingComparison {
     
@@ -46,72 +45,18 @@ public class sortingComparison {
             yDataB[i-1] = bucketSortTime;
 
         }
-        // sortingComparison sortComp = new sortingComparison();
-        // int[] arr = generateRandomArray(10, 0, 100);
-        // int[] arr2 = generateRandomArray(100, 0, 1000);
-        // int x = measureSortTime(arr, "Quick Sort", quickSort(arr, arr[0], arr[(arr.length-1)]));
-        // double x = 10;
-        // double x2 = 100;
-        // int x2 = measureSortTime(arr, "Radix Sort", countingSort(arr, arr[0], arr[(arr.length-1)]));
-        // int y2 = 10;
-        // List<Integer> list=new ArrayList<>();
-        // for(int i=0;i<arr.length;i++)
-        // {
-        //     list.add(arr[i]);
-        // }
-        // List<Integer> list2=new ArrayList<>();
-        // for(int i=0;i<arr2.length;i++)
-        // {
-        //     list2.add(arr2[i]);
-        // }
-        // int x3 = measureSortTime(arr, "Radix Sort", bucketSort(arr, (Collections.max(list)-Collections.min(list))/arr.length));
-        // int y3 = 10;
-
-
-        // double quickSortTime = measureSortTime(arr, "Quick Sort", (a) -> quickSort(a, 0, a.length - 1));
-        // double radixSortTime = measureSortTime(arr, "Radix Sort", (a) -> radixSort(a, 10));
-        // double bucketSortTime = measureSortTime(arr, "Bucket Sort", (a) -> bucketSort(a, (Collections.max(list)-Collections.min(list))/arr.length));
-
-        // double quickSortTime2 = measureSortTime(arr2, "Quick Sort", (a) -> quickSort(a, 0, a.length - 1));
-        // double radixSortTime2 = measureSortTime(arr2, "Radix Sort", (a) -> radixSort(a, 10));
-        // double bucketSortTime2 = measureSortTime(arr2, "Bucket Sort", (a) -> bucketSort(a, (Collections.max(list)-Collections.min(list))/arr.length));
-
-
-
-
-        // double[] xDataQ = new double[] {x, x2};
-        // double[] yDataQ = new double[] {quickSortTime, quickSortTime2};
-
-        // double[] xDataR = new double[] {x, x2};
-        // double[] yDataR = new double[] {radixSortTime, radixSortTime2};
-
-        // double[] xDataB = new double[] {x, x2};
-        // double[] yDataB = new double[] {bucketSortTime, bucketSortTime2};
-
-
-        // double[] xData2 = new double[] { 0.0, 1.0, 2.0 };
-        // double[] yData2 = new double[] { 1.0, 2.0, 0.0 };
-
-        XYChart chart = QuickChart.getChart("Sample Chart", "X", "Y", "Quick Sort", xDataQ, yDataQ);
+  
+        XYChart chart = QuickChart.getChart("Plotting Run Times", "X", "Y", "Quick Sort", xDataQ, yDataQ);
         // add other line to graph
 
-        // chart.addSeries("Quick Sort", xDataQ, yDataQ);
         chart.addSeries("Radix Sort", xDataR, yDataR);
         chart.addSeries("Bucket Sort", xDataB, yDataB);
-
 
         // Show it
         new SwingWrapper(chart).displayChart();
 
         // Save it
         BitmapEncoder.saveBitmap(chart, "./Sample_Chart", BitmapFormat.PNG);
-        
-        //CategoryChart chart = new CategoryChartBuilder().width(800).height(600).title("Sorting Comparison").xAxisTitle("Algorithm").yAxisTitle("Time (ms)").build();
-        //chart.addSeries("Sort Times", new String[] {"Quick Sort", "Radix Sort", "Bucket Sort"}, new Long[] {quickSortTime, radixSortTime, bucketSortTime});
-        
-        //new SwingWorker<>(chart).displayChart();
-
-        // add some lines here to test and probabaly print each of the different sort methods
     }
     
     public static long measureSortTime(int[] arr, String sortName, SortFunction sortFunction) {
@@ -210,15 +155,6 @@ public class sortingComparison {
           countingSort(array, size, place);
       }
     
-   
-      // Bucketsort implementation
-
-    // public static void swap(int[] arr, int i, int j) {
-    //     int temp = arr[i];
-    //     arr[i] = arr[j];
-    //     arr[j] = temp;
-    // }
-    // (maxValue - minValue) / n
     public static void bucketSort(int[] array, int bucketSize) {
         if (array.length == 0) {
             return;
