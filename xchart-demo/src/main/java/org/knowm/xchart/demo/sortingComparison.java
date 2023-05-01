@@ -1,12 +1,7 @@
 package org.knowm.xchart.demo;
 import java.util.*;
 import java.util.List;
-import java.awt.*;  
-import javax.swing.*;  
-import java.awt.geom.*;  
-
 import java.io.IOException;
-
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.QuickChart;
@@ -14,19 +9,24 @@ import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 
+// Created by Francesca Brown and Cecelia Kaufmann
+// Credit to XChart Library for allowing us to plot our data 
+
 public class sortingComparison {
     
     public static void main(String[] args) throws IOException{
-        double[] xDataQ = new double[4];
-        double[] yDataQ = new double[4];
+        int n = 6;
 
-        double[] xDataR = new double[4];
-        double[] yDataR = new double[4];
+        double[] xDataQ = new double[n];
+        double[] yDataQ = new double[n];
 
-        double[] xDataB = new double[4];
-        double[] yDataB = new double[4];
+        double[] xDataR = new double[n];
+        double[] yDataR = new double[n];
 
-        for(int i = 1; i < 5; i++){
+        double[] xDataB = new double[n];
+        double[] yDataB = new double[n];
+
+        for(int i = 1; i < n+1; i++){
             int[] arr = generateRandomArray((int)Math.pow(10, i), 0, (int)Math.pow(10, i+1));
             List<Integer> list=new ArrayList<>();
                 for(int j=0;j<arr.length;j++){
@@ -46,7 +46,7 @@ public class sortingComparison {
 
         }
   
-        XYChart chart = QuickChart.getChart("Plotting Run Times", "X", "Y", "Quick Sort", xDataQ, yDataQ);
+        XYChart chart = QuickChart.getChart("Plotting Run Times", "Array Size", "Sort Time (ms)", "Quick Sort", xDataQ, yDataQ);
         // add other line to graph
 
         chart.addSeries("Radix Sort", xDataR, yDataR);
